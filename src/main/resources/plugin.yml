@@ -1,0 +1,4 @@
+name: ServerList
+main: net.year4000.serverlist.ServerList
+version: ${pom.version}
+author: ewized

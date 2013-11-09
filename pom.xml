@@ -1,0 +1,65 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>net.year4000</groupId>
+  <artifactId>serverlist</artifactId>
+  <version>1</version>
+  <name>ServerList</name>
+  <description>Edit the way clients shows the server in the serverlist.</description>
+  <packaging>pom</packaging>
+
+  <organization>
+  	<name>Year4000</name>
+  	<url>http://www.year4000.net/</url>
+  </organization>
+
+   <build>
+    <defaultGoal>install</defaultGoal>
+    <finalName>${project.name}</finalName>
+    <resources>
+      <resource>
+        <directory>srv/main/resources</directory>
+        <filtering>true</filtering>
+      </resource>
+    </resources>
+    <plugins>
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.0</version>
+        <configuration>
+          <source>1.7</source>
+          <target>1.7</target>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jar-plugin</artifactId>
+        <version>2.3.1</version>
+        <inherited>true</inherited>
+        <configuration>
+          <archive>                   
+            <manifest>
+              <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+              <addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
+            </manifest>
+          </archive>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+  <repositories>
+    <repository>
+        <id>dev-cmc</id>
+        <url>http://repo.craftminecraft.net/content/groups/public/</url>
+    </repository>
+  </repositories>
+
+  <dependencies>
+    <dependency>
+      <groupId>net.md-5</groupId>
+      <artifactId>bungeecord-api</artifactId>
+      <version>1.6.2-SNAPSHOT</version>
+    </dependency>
+  </dependencies>
+
+</project>
