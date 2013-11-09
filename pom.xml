@@ -5,7 +5,7 @@
   <version>1</version>
   <name>ServerList</name>
   <description>Edit the way clients shows the server in the serverlist.</description>
-  <packaging>pom</packaging>
+  <packaging>jar</packaging>
 
   <organization>
   	<name>Year4000</name>
@@ -15,10 +15,16 @@
    <build>
     <defaultGoal>install</defaultGoal>
     <finalName>${project.name}</finalName>
+    <sourceDirectory>${basedir}/src/main/java/</sourceDirectory>
     <resources>
       <resource>
-        <directory>srv/main/resources</directory>
+        <targetPath>.</targetPath>
         <filtering>true</filtering>
+        <directory>${basedir}/src/main/resources/</directory>
+        <includes>
+          <include>plugin.yml</include>
+          <include>LICENSE.txt</include>
+        </includes>
       </resource>
     </resources>
     <plugins>
