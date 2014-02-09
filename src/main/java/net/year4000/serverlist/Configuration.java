@@ -18,16 +18,14 @@ public class Configuration extends Config {
     }
 
     private String prefix = "&3[&bY4K&3]&r ";
-    private String nonplayer = "&7Join us today!";
+    private String noplayer = "&7Join us today!";
     private String player = "&7Welcome back player!";
 
-    private List<String> messages;
-    {
-        messages = new ArrayList<>();
-        messages.add("&6Join our Survival Server!");
-        messages.add("&6Join our Creative Server!");
-        messages.add("&6Join our Games Server!");
-    }
+    private List<String> messages = new ArrayList<String>() {{
+        add("&6Join our Survival Server!");
+        add("&6Join our Creative Server!");
+        add("&6Join our Games Server!");
+    }};
 
     // Get the prefix for the fist line
     public String getPrefix() {
@@ -35,8 +33,8 @@ public class Configuration extends Config {
     }
 
     // Get the bottom line when no player is found.
-    public String getNonplayer() {
-        return nonplayer;
+    public String getNoPlayer() {
+        return noplayer;
     }
 
     // Get the message when the player is found.

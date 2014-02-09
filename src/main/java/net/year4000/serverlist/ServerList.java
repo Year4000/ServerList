@@ -16,13 +16,11 @@ import java.util.logging.Level;
 
 public class ServerList extends Plugin implements Listener {
     HashMap<String, String> IPS = new HashMap<String, String>();
-    Configuration config;
 
     @Override
     public void onEnable() {
-        config = new Configuration(this);
+        new Configuration(this);
         getProxy().getPluginManager().registerListener(this, this);
-        log("Enabled");
     }
 
     @EventHandler
@@ -34,6 +32,7 @@ public class ServerList extends Plugin implements Listener {
     @EventHandler
     public void onServerPing(ProxyPingEvent event) {
         // Event variables
+        Configuration config = new Configuration(this);
         ServerPing response = event.getResponse();
         PendingConnection connection = event.getConnection();
         String ip = connection.getAddress().toString();
@@ -50,7 +49,7 @@ public class ServerList extends Plugin implements Listener {
             String motdPlayer = replaceColor(config.getPlayer());
             motd += " \n" + motdPlayer.replaceAll("player", getPlayer(ip));
         } else {
-            motd += " \n" + replaceColor(config.getNonplayer());
+            motd += " \n" + replaceColor(config.getNoPlayer());
         }
 
         // Set the MOTD
