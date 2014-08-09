@@ -1,5 +1,8 @@
 ServerList
 ======
+
+> This project is no longer maintained
+
 This plugin was made for the servers at [Year4000]. ServerList edit's the way
 clients show the server in the serverlist. This allows the list to display what
 we want.
